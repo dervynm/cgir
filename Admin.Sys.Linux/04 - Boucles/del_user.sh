@@ -16,7 +16,9 @@ then
 	exit $ERR_CODE_ARGS
 fi
 
-if test $HOME = "/root"
+admin=whoami
+
+if test $admin = "root"
 then
 	echo $ERR_MSG_NOT_ADMIN
 	exit $ERR_CODE_NOT_ADMIN
@@ -26,10 +28,10 @@ else
 		read -p "Delete user $1 ? (y/n): " answer
 		case $answer in
 			[OoYy])	deluser --remove-home "$1"
-							echo "User $1 has been removed"
-							exit $OK;;
-			[Nn])		echo "User $1 has not been removed";;
-			*)			echo "Type yes (YyOo) or no (Nn)";;
+					echo "User $1 has been removed"
+					exit $OK;;
+			[Nn])	echo "User $1 has not been removed";;
+			*)		echo "Type yes (YyOo) or no (Nn)";;
 		esac
 	else
 		echo $ERR_MSG_USER_NOT_FOUND
