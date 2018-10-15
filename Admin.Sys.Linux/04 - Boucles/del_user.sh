@@ -18,7 +18,7 @@ fi
 
 admin=whoami
 
-if test $admin = "root"
+if ! test $admin = "root"
 then
 	echo $ERR_MSG_NOT_ADMIN
 	exit $ERR_CODE_NOT_ADMIN
