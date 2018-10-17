@@ -1,0 +1,4 @@
+Lister : less
+Supprimer : rm
+Vider : cp /dev/null
+Infos : ls -li
