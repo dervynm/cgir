@@ -7,7 +7,6 @@ ERR_CODE_ARGS=2
 
 ERR_MSG_ADMIN="Vous n'etes pas autorisez à exécuter ce script"
 ERR_MSG_ARGS="1 argument nécessaire"
-commande=""
 
 if test $UID -ne 0
 then
@@ -29,21 +28,21 @@ do
 	then
 		echo "Vous avez choisi $REPLY ($choix)"
 		case $REPLY in
-			[1])	echo -e "La commande exécutée est : less $2"
-					less $2
-#					echo -e "La commande exécutée est : head -1 $1 |cut -d ' ' -f3-"
+			[1])	echo "La commande exécutée est : less $2"
+					commande=$(head -1 $1 |cut -d ' ' -f3-)
+					$commande $2
 					exit $OK;;
-			[2])	echo -e "La commande exécutée est : rm $2"
-					rm $2
-#					$commande="head -2 $1 |tail -1 |cut -d ' ' -f3-"
+			[2])	echo "La commande exécutée est : rm $2"
+					commande=$(head -2 $1 |tail -1 |cut -d ' ' -f3-)
+					$commande $2
 					exit $OK;;
-			[3])	echo -e "La commande exécutée est : cp /dev/null $2"
-					cp /dev/null $2
-#					$commande="tail -2 $1 |head -1 |cut -d ' ' -f3-"
+			[3])	echo "La commande exécutée est : cp /dev/null $2"
+					commande=$(tail -2 $1 |head -1 |cut -d ' ' -f3-)
+					$commande $2
 					exit $OK;;
-			[4])	echo -e "La commande exécutée est : ls -li $2"
-					ls -li $2	
-#					$commande="tail -1 $1 |cut -d ' ' -f3-"
+			[4])	echo "La commande exécutée est : ls -li $2"
+					commande=$(tail -1 $1 |cut -d ' ' -f3-)
+					$commande $2
 					exit $OK;;
 			*)		echo "404 not found";;
 		esac			
