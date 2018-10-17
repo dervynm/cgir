@@ -37,3 +37,34 @@ b. Fichier `capture2.pcapng`
 ## Quelle commande a déclenché cette communication?
 
 		ping -c1 210.10.10.129
+		
+## Quelle est la taille totale du paquet ?
+
+		La taille totale du paquet est de 98 octets
+
+## Quelle est la taille de l'en-tête IP ?
+
+		L'en-tête IP fait 84 octets
+		
+## Combien de routeurs séparent les deux machines ?
+
+		Le TTL de départ est de 64 et celui d'arrivé est de 61, on a donc 3 routeurs entre les deux machines
+		
+c. Fichier `capture3.pcapng`
+
+## Quelle erreur est signalée par le paquet ICMP ? Pourquoi ?
+
+		Le paquet ICMP signale que le TTL est dépassé. C'est arrivé car le TTL était fixé à 1
+		
+## Quelles sont les adresses IP des machines concernées ?
+
+		Source : 192.168.1.5
+		Destination : 201.10.10.1
+		
+## Quel est le type d'application qui était concerné ?
+
+		ICMP
+
+## Quelle machine a signalé l'erreur ? Quel est son type ?
+
+		La machine qui a signalé l'erreur est la 210.10.10.1 et il s'agit d'un routeur
