@@ -68,3 +68,13 @@ c. Fichier `capture3.pcapng`
 ## Quelle machine a signalé l'erreur ? Quel est son type ?
 
 		La machine qui a signalé l'erreur est la 210.10.10.1 et il s'agit d'un routeur
+
+d. Fichier `capture4.pcapng`
+
+## A quel niveau est géré la fragmentation ?
+
+		La frangmentation se fait au niveau du protocole IP
+
+## A quoi correspond le champs 'Fragment offset' ? Quantinté de donnée dans la première trame ?
+
+		
